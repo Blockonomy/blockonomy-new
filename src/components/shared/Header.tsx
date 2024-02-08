@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import MaxWidthContainer from "./MaxWidthContainer";
 import SiteLogo from "./SiteLogo";
 import NavLink from "./NavLink";
@@ -51,10 +51,20 @@ export default function Header() {
           </div>
 
           <div className="hidden sm:flex items-center gap-2">
-            <Button className="font-semibold" variant="outline">
-              LOGIN
-            </Button>
-            <Button className="font-semibold">SIGN UP</Button>
+            <ConnectButton
+              accountStatus={{
+                smallScreen: "avatar",
+                largeScreen: "full",
+              }}
+              chainStatus={{
+                smallScreen: "icon",
+                largeScreen: "full",
+              }}
+              showBalance={{
+                smallScreen: false,
+                largeScreen: true,
+              }}
+            />
           </div>
 
           <Button variant="outline" size="icon" className="flex lg:hidden">

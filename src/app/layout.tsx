@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/shared/Header";
+import { ConnectWalletProvider } from "@/providers/ConnectWalletProvider";
+
+import "@rainbow-me/rainbowkit/styles.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,8 +27,10 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased flex-1 flex flex-col",
           inter.className
         )}>
-        <Header />
-        {children}
+        <ConnectWalletProvider>
+          <Header />
+          {children}
+        </ConnectWalletProvider>
       </body>
     </html>
   );

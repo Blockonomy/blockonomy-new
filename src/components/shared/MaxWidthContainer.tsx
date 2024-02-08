@@ -11,7 +11,7 @@ export default function MaxWidthContainer({
   className,
 }: MaxWidthContainerTypes) {
   return (
-    <div className={cn("mx-auto w-full px-4 max-w-[1456px]", className)}>
+    <div className={cn("mx-auto w-full px-4 max-w-[1400px]", className)}>
       {children}
     </div>
   );
