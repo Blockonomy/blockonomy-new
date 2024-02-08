@@ -5,6 +5,7 @@ import { Karma, Kavoon, Kantumruy_Pro, Kaisei_Tokumin } from "next/font/google";
 import Image from "next/image";
 
 import stars from "../../../public/assets/stars.svg";
+import ResultTable from "@/components/shared/ResultTable";
 
 const kavoon = Kavoon({
   subsets: ["latin"],
@@ -214,7 +215,8 @@ export default function Home() {
           <h1 className="text-3xl font-bold">Top Gainers</h1>
           <h1 className="text-3xl font-bold">Top Losers</h1>
         </div>
-        <div className="border-2 border-primary w-full flex items-center gap-6 justify-between p-4"></div>
+
+        <ResultTable />
       </MaxWidthContainer>
 
       <MaxWidthContainer className="flex flex-col py-10">

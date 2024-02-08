@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 
 import { Karma } from "next/font/google";
@@ -15,7 +15,11 @@ export default function NavLink({ name, path, isActive }: NavLinkType) {
       href={path}
       className={cn("flex items-center", { "text-primary": isActive })}>
       <p className={cn("text-base font-bold", karma.className)}>{name}</p>
-      <ChevronDown className="w-4 h-4 ml-1.5" />
+      {isActive ? (
+        <ChevronUp className="w-4 h-4 ml-1.5" />
+      ) : (
+        <ChevronDown className="w-4 h-4 ml-1.5" />
+      )}
     </Link>
   );
 }
